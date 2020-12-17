@@ -1,16 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using GlobalGames.Data;
-using GlobalGames.Data.Entidades;
-using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
-using System.Threading.Tasks;
-using GlobalGames.Data;
+﻿using GlobalGames.Data;
 using GlobalGames.Data.Entidades;
 using GlobalGames.Models;
 using Microsoft.AspNetCore.Mvc;
