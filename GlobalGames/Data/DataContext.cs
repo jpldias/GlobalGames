@@ -9,7 +9,7 @@ namespace GlobalGames.Data
 
         public DbSet<Contactos> Contactos { get; set; }
 
-        
+        public DbSet<Inscricoes> Inscricoes { get; set; }
 
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {

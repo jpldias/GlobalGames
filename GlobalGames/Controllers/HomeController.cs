@@ -38,6 +38,11 @@ namespace GlobalGames.Controllers
             return View();
         }
 
+        public IActionResult Inscricao()
+        {
+
+            return View();
+        }
         // POST: Contactos/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -53,6 +58,25 @@ namespace GlobalGames.Controllers
             }
             return View();
         }
+
+
+
+        // POST: Contactos/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> inscricao([Bind("Id,Name,LastName,Address,Localidade,CCidadao,Birthday")] Inscricoes inscricoes)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(inscricoes);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Inscricao));
+            }
+            return View();
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

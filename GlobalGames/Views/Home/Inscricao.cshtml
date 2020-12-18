@@ -1,0 +1,99 @@
+﻿@model GlobalGames.Data.Entidades.Inscricoes
+
+@{
+    ViewData["Title"] = "Inscrição";
+}
+
+<section id="main">
+    <div class="container">
+        <article id="main-col">
+            <h1 class="titulo">Inscrição</h1>
+
+            <ul id="servicos">
+                <li>
+                    <h3>Novo Jogo Realidade Virtual</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu ante faucibus, congue nunc vitae, bibendum mauris. Praesent dui nibh, tincidunt at finibus vitae, feugiat non purus. </p>
+                    <p>Inscreve-te já e so preencher aqui ao lado</p>
+                </li>
+
+            </ul>
+        </article>
+
+            <aside id="sidebar">
+                <div class="dark">
+                    <form id="formulario" class="orcamento" asp-action="Inscricao">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="text-danger">
+                            <label asp-for="Name">Nome</label>
+                            <input asp-for="Name" type="text" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="text-danger">
+                            <label asp-for="LastName">Apelido</label>
+                            <input asp-for="LastName" type="text" />
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+                        </div>
+                        <div class="text-danger">
+                            <label asp-for="Address">Morada</label>
+                            <input asp-for="Address" type="text" />
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+                        <div class="text-danger">
+                            <label asp-for="Localidade">Localidade</label>
+                            <input asp-for="Localidade" type="text" />
+                            <span asp-validation-for="Localidade" class="text-danger"></span>
+                        </div>
+                        <div class="text-danger">
+                            <label asp-for="CCidadao">CC</label>
+                            <input asp-for="CCidadao" type="text" />
+                            <span asp-validation-for="CCidadao" class="text-danger"></span>
+                        </div>
+                        <div class="text-danger">
+                            <label asp-for="Birthday">Data de Nascimento</label>
+                            <input asp-for="Birthday" type="date" />
+                            <span asp-validation-for="Birthday" class="text-danger"></span>
+                        </div>
+                        <input name="Submit" type="submit" id="Submit" value="Submit" class="button_1" />
+                    </form>
+                </div>
+            </aside>
+
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@section Scripts{
+    <script type="text/javascript">
+        document.querySelector('#inscricao').className = 'selecionado';
+    </script>
+
+    <script>
+        const formu = document.querySelector("#formulario");
+
+        Event();
+
+        function Event() {
+            formu.addEventListener("submit", submit);
+        }
+
+        function submit(e) {
+            alert('Inscrição efetuada com sucesso')
+        }
+
+    </script>
+}
