@@ -22,4 +22,5 @@ namespace GlobalGames.Data.Entidades
         [Display(Name = "Mensagem")]
         public string msg { get; set; }
     }
+    
 }

@@ -24,5 +24,27 @@ namespace GlobalGames.Data.Entidades
 
         [Display(Name = "Data de Nascimento")]
         public DateTime Birthday { get; set; }
+
+        [Display(Name = "Image")]
+        public string ImageUrl { get; set; }
+
+        public User User { get; set; }
+
+
+        public string ImageFullPath
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(this.ImageUrl))
+                {
+                    return null;
+                }
+
+
+                //por a morada do site !!!!!!! e tirar o localhost
+                //FEITO POR JD
+                return $"https://localhost:44394{this.ImageUrl.Substring(1)}";
+            }
+        }
     }
 }

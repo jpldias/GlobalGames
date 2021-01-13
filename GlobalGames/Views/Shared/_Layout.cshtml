@@ -8,7 +8,7 @@
     <title>GlobalGames | @ViewData["Title"]</title>
     <environment include="Development">
         <link rel="stylesheet" href="~/css/site.css" />
-        <!-- Latest compiled and minified CSS -->
+        <!-- Latest compiled and minified CSS FEITO POR JD-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
         <!-- Optional theme -->
@@ -25,7 +25,7 @@
         <!-- Optional theme -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
-        <!-- Latest compiled and minified JavaScript -->
+        <!-- Latest compiled and minified JavaScript FEITO POR JD-->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     </environment>
 </head>
@@ -46,43 +46,38 @@
                     @if (this.User.Identity.IsAuthenticated)
                     {
 
-                
-                    
-                        <li><a asp-controller="UserLogins" asp-action="Index" class="dropdown-item">User</a></li>
-                        <li><a asp-controller="Contactos" asp-action="Index" class="dropdown-item">Mensagens</a></li>
-                        <li><a asp-area="" asp-controller="Account" asp-action="ChangeUser" class="dropdown-item">@this.User.Identity.Name</a></li>
-                        <li><a asp-area="" asp-controller="Account" asp-action="Logout" class="dropdown-item">Logout</a></li>
-                    
-                
-                
-                            }
-            else
-            {
-                
-                    <li><a asp-area="" asp-controller="Account" asp-action="Login"> Login </a></li>
 
-               
+
+        <li><a asp-controller="UserLogins" asp-action="Index" class="dropdown-item">User</a></li>
+                        <li><a asp-controller="Contactos" asp-action="Index" class="dropdown-item">Mensagens</a></li>
+                                        <li><a asp-area="" asp-controller="Account" asp-action="ChangeUser" class="dropdown-item">@this.User.Identity.Name</a></li>
+                                                        <li><a asp-area="" asp-controller="Account" asp-action="Logout" class="dropdown-item">Logout</a></li>
+ }
+                                                    else
+                                                    {
+
+                                        <li><a asp-area="" asp-controller="Account" asp-action="Login"> Login </a></li>
 }
                 </ul>
         </div>
 
-         </nav>
-            </div>
-                </header>
-            <section id="showcase">
+        </nav>
+        </div>
+    </header>
+    <section id="showcase">
         <div class="container">
             <h1>A melhor plataforma de realidade virtual</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus facilisis lectus at sapien dapibus facilisis. Ut maximus nunc urna, non congue diam mattis ut. Fusce eros leo, pulvinar ut ultrices non, aliquam nec quam. Integer gravida ut mauris ac ultrices. Phasellus iaculis elementum condimentum.</p>
         </div>
-        </section>
+    </section>
 
-        <partial name="_Newsletter" />
+    <partial name="_Newsletter" />
+   
+    @RenderBody()
 
-        @RenderBody()
-
-        <footer>
+    <footer>
         <p>Global Games, Copyright &copy; @DateTime.Now.Year</p>
-        </footer>
+    </footer>
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
@@ -104,6 +99,7 @@
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
+   
     @RenderSection("Scripts", required: false)
 
 
